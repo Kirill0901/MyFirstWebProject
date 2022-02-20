@@ -1,0 +1,87 @@
+en:
+  hi: 'Welcome, '
+  header:
+    users: "Our users"
+    log_out: "Log out"
+    log_in: "Log in"
+    registration: "Registration"
+    create: "Create post"
+    summary: Summary
+    categories: All categories
+
+  show_posts:
+    none: No reviews yet
+
+  edit_post: Edit post
+  show:
+    new: New post
+    last_update: 'Last update at: '
+    created_at: 'Created at: '
+    created_by: 'Created by: '
+
+  new_post:
+    title: Title
+    post: Note
+    categories: Categories
+    rating: Rating
+    enter_title: Enter title
+    enter_text: Enter text
+    enter_categories: Enter tags, split by comma
+
+  users_table:
+    users: Users
+    username: User
+    reg_date: Registration date
+    
+  show_user:
+    email: 'Email address:'
+    reg_date: 'Registration date:'
+
+  comment:
+    new_comm: New comment
+    username: Username
+    comm_text: Comment
+    add: Add comment
+
+  edit: Edit
+  delete: Delete
+  cancel: Cancel
+  create: Create
+  sign_up: Sign up
+  enter_email: Enter email
+  enter_password: Enter password
+  password: Password
+  password_confirmation: Password confirmation
+  email: Email
+  remember: Remember me
+  body: Body
+  title: title
+  write: ' writes:'
+  sponsors: 'There are no sponsors('
+  categories: 'Categories: '
+  rating: 'Rating: '
+  new_category:
+    new: New category
+    name: Name
+    enter_name: Enter name
+    categories: Categories
+
+  add: 'Add'
+  no_rights: No rights to delete user
+  submit: Submit
+  final: Final Work
+  info_name: Made by Kirill Grinchenko IU6-32B
+  priv: "All rights reserved"
+  category: 'Category: '
+  show_category:
+    new: New category
+    name: Name
+    categories: Categories
+  
+  none: 'None'
+  not_saved: 'prohibited this post from being saved:'
+  users_list:
+    show: "Show"
+    
+  en: English
+  ru: Russian

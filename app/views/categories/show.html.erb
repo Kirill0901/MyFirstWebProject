@@ -1,0 +1,41 @@
+<h2><%= t('category') + @category.name %></h2>
+
+<% @posts.each do |post| %>
+  <article class="post">
+    <section class="post-head">
+      <h2><%= link_to post.title, post_path(post) %></h2>
+    </section>
+    <section class="post-additional">
+      <%= t('category') %>
+      <% if post.category.present? %>
+        <%= link_to post.category.name, post.category %><br />
+      <% else %>
+        <%= 'None' %><br />
+      <% end %>
+      <%= t('rating') + post.rating.to_s + '/5.0' %>
+    </section><br />
+    <section class="post-summary">
+      <%= post.body[0..250] + (post.body.to_s.length > 250 ? "..." : "") %>
+    </section><br />
+    <section class="services" style="color: grey;">
+      <% id = post.user_id.to_i %>
+      <% user = User.find(id).email %>
+      <%= t('show.created_by') + user %>
+      |
+      <small><%= t('show.created_at') + post.created_at %></small>
+      <% if post.user_id == current_user.id %>
+        |
+        <%= link_to t('edit'), edit_path(post, locale: I18n.locale) %>
+        |
+        <%= link_to t('delete'), post_path(post,  locale: I18n.locale), data: {method: :delete, confirm: 'You sure?'} %>
+      <% end %>
+    </section>
+  </article>
+  <hr />
+<% end %>
+
+<% if @posts.length == 0 %>
+  <p id="no-notes" style="color: grey; align: center; text-align: center; vertical-align: middle; line-height: 300px;"><%= t('show_posts.none') %></p>
+<% end %>
+
+<%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

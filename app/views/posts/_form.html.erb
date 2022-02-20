@@ -1,0 +1,38 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+      <div class="alert alert-danger">
+        <h2><%= pluralize(post.errors.count, "error") + ' ' + t('not_saved') %></h2>
+
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="field form-group">
+    <label for="exampleFormControlTextarea1"><%= t('new_post.title')%></label>
+    <%= form.text_field :title, class: "form-control", id: "exampleFormControlInput1", placeholder: t('new_post.enter_title') %>
+  </div><br />
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1"><%= t('new_post.rating') %></label>
+    <%= form.select :rating, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]]), {},  class: "form-select", aria_label: "Default select example" %>
+  </div><br />
+
+  <div class="field form-group">
+    <label for="exampleFormControlTextarea1"><%= t('new_post.categories')%></label>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, class: "form-select" %>
+  </div><br />
+
+  <div class="field form-group">
+    <label for="exampleFormControlTextarea1"><%= t('new_post.post') %></label>
+    <%= form.text_area :body, class: "form-control", id: "exampleFormControlTextarea1", rows: "3", placeholder: t('new_post.enter_text') %>
+  </div><br />
+
+  <div class="actions">
+    <%= form.submit t('add'), class: "btn btn-outline-dark me-2" %>
+    <%= link_to t('cancel'), root_path(locale: I18n.locale), class: 'btn btn-outline-dark me-2' %>
+  </div>
+<% end %>

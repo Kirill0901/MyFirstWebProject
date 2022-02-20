@@ -1,0 +1,32 @@
+<div class="container">
+  <div style="float: left;">
+    <h3><%= t('show_category.categories')%></h3>
+  </div>
+  <div style="float: right;">
+    <%= link_to t('show_category.new'), create_category_path(locale: locale), class: 'btn btn-outline-dark me-2' %>
+  </div>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th><%= t('show_category.name')%></th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% i = 1 %>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= category.name %></td>
+          <td><%= link_to t('edit'), edit_category_path(:id => category.id, locale: locale) %></td>
+          <td><%= link_to t('delete'), destroy_category_path(:id => category.id, locale: locale), data: { confirm: 'You sure?' }, method: :delete %></td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

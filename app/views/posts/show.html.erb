@@ -1,0 +1,61 @@
+<article class="post">
+  <section class="post-head">
+    <h2><%= @post.title %></h2>
+  </section>
+  <section class="service">
+    <small><%= t('show.created_at') + @post.created_at %></small>
+    <% if @post.user_id == current_user.id %>
+      |
+      <%= link_to t('edit'), edit_path(@post, locale: I18n.locale) %>
+      |
+      <%= link_to t('delete'), post_path(@post,  locale: I18n.locale), data: {method: :delete, confirm: 'You sure?'} %>
+    <% end %>
+  </section><br />
+  <section class="post-additional">
+    <%= t('category') %>
+    <% if @post.category.present? %>
+      <%= link_to @post.category.name, @post.category, class: "can-underline" %><br />
+    <% else %>
+      <%= t('none') %><br />
+    <% end %>
+    <%= t('rating') + @post.rating.to_s + '/5.0' %>
+  </section><br />
+  <section class="post-body">
+    <p><%= @post.body %></p>
+  </section>
+</article><br /><hr>
+
+<h4><%= t('comment.add') %></h4><br />
+
+<%= form_for([@post, @post.comments.build]) do |form| %>
+  <div class="field form-group">
+    <label for="exampleFormControlTextarea1"><%= t('comment.comm_text') %></label>
+    <%= form.text_area :body, class: "form-control", id: "exampleFormControlTextarea1", rows: "3" %>
+  </div><br />
+
+  <div class="actions">
+    <%= form.submit t('comment.add'), class: "btn btn-outline-dark me-2" %>
+  </div>
+<% end %><br />
+
+<div id='comments'>
+  <% @post.comments.reverse().each do |comm| %>
+    <div class="comment alert">
+      <% id = comm.user_id.to_i %>
+      <% if id != 0 %>
+        <h5><%= user = User.find(id).email + t('write') %></h5>
+
+        <p>
+          <%= comm.body %>
+        </p>
+        <small><%= t('show.created_at') + comm.created_at %></small>
+        <% if id == current_user.id %>
+          |
+          <%= link_to t('delete'), post_comment_path(comm.post, comm, locale: I18n.locale), data: {method: :delete, confirm: 'You sure?'} %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<script src="main.js"></script>

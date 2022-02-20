@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+example:
+  name: example@mail.ru
+  password: qwerty
+  encrypted_password: <%= User.new.send(:password_digest, '123greetings') %>
+
+# ('example@mail.ru', 'qwerty', '2021-12-21 21:49:08.972455', '2021-12-21 21:49:08.972455', 980190962)
+# ("name", "password", "created_at", "updated_at", "id")

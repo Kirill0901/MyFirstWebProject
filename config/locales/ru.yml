@@ -1,0 +1,82 @@
+ru:
+  hi: 'Добро пожаловать, '
+  header:
+    users: "Пользователи"
+    log_out: "Выйти"
+    log_in: "Войти"
+    registration: "Регистрация"
+    create: "Создать пост"
+    categories: Все категории
+
+  show_posts:
+    none: Пока нет рецензий
+
+  edit_note: Изменить запись
+  show:
+    new: Новая запись
+    last_update: 'Обновлено: '
+    created_at: 'Создано в: '
+    created_by: 'Создано: '
+
+  new_post:
+    title: Название
+    post: Текст
+    categories: Категории
+    rating: Рейтинг
+    enter_title: Введите название
+    enter_text: Введите текст
+    enter_categories: Введите теги через запятую
+
+  users_table:
+    users: Пользователи
+    username: Пользователь
+    reg_date: Дата регистрации
+
+  show_user:
+    email: 'Email адрес:'
+    reg_date: 'Дата регистрации:'
+
+  comment:
+    new_comm: Новый комментарий
+    username: Имя пользователя
+    comm_text: Комментарий
+    add: Добавить комментарий
+  
+  edit: Изменить
+  delete: Удалить
+  cancel: Отмена
+  create: Создать
+  sign_up: Регистрация
+  enter_email: Введите email
+  enter_password: Введите пароль
+  password: Пароль
+  password_confirmation: Подтверждение пароля
+  email: Email
+  remember: Запомнить меня
+  write: ' пишет:'
+  categories: 'Категории: '
+  rating: 'Рейтинг: '
+  new_category:
+    new: Новая категория
+    name: Название
+    enter_name: Введите название
+    categories: Категории
+  
+  add: 'Добавить'
+  no_rights: Нет прав на удаление пользователя
+  final: Зачетная работа
+  info_name: Сделал Гринченко Кирилл Группа ИУ6-32Б
+  priv: "Все права защищены"
+  category: 'Категория: '
+  show_category:
+    new: Новая категория
+    name: Название
+    categories: Категории
+
+  none: 'Нет'
+  not_saved: 'не позволяют сохранить пост:'
+  users_list:
+    show: "Показать"
+    
+  en: Английский
+  ru: Русский
